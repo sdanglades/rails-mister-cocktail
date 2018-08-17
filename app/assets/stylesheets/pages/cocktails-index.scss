@@ -1,0 +1,25 @@
+// Place all the styles related to the cocktails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.body {
+  font-family: 'Cardo', serif;
+};
+
+.banner{
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+.banner-content {
+  font-family: 'Oswald', sans-serif;
+};
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+}

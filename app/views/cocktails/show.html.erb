@@ -13,3 +13,12 @@
   </div>
 </div>
 
+<% @cocktail.doses.each do |dose| %>
+  <%= dose.ingredient.name %>
+  <%= dose.description %>
+  <%= link_to "delete", cocktail_dose_path(@cocktail, dose), method: "delete"  %>
+
+<% end %>
+
+
+

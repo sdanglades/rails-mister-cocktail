@@ -8,22 +8,26 @@ class DosesController < ApplicationController
   end
 
   def create
-    # raise
-    # 1 get info fron params
-    # 2 with the ids; find and get the object from the db
-    # ingredients and cocktqils
 
-    # 3 create the dose
-    # dose.cocktail = something
-    # dose.ingredient = something
+    cocktail = Cocktail.find(params["cocktail_id"])
+    @dose = Dose.new(dose_params)
+    @dose.cocktail = cocktail
 
-    save
-
-
-    @dose = Dose.new()
+    if @dose.save
+      redirect_to cocktail_path(cocktail)
+    else
+      redirect_to cocktail_path(cocktail)
+    end
   end
 
-
   def delete
+    @dose = Dose.find(params[:cocktail_id])
+    @dose.destroy
+    redirect_to cocktail_path
+  end
+
+  def dose_params
+   params.require(:dose).permit(:description, :ingredient_id)
+
   end
 end
